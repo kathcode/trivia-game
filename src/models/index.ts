@@ -3,3 +3,7 @@ export interface IHeaderData {
   difficulty: string;
   revenue: number;
 }
+
+export interface IGameData extends IHeaderData{
+  category: number
+}

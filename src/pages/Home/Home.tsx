@@ -6,19 +6,20 @@ import Grid from '@material-ui/core/Grid';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
-import { IInputs } from '../../models/general';
 import { categoryList, difficultyList } from '../../constants/index';
+import { useHistory } from 'react-router';
 
 import './home.css';
 
-const Home = () => {
-  const onSubmit: SubmitHandler<IInputs> = data => console.log(data);
+const Home = ({ updateGameContext }: any) => {
   const [category, setCategory] = useState(9);
   const [difficulty, setDifficulty] = useState('Any Difficulty');
-  const [name, setName] = useState('')
+  const [playerName, setPlayerName] = useState('');
+  const history = useHistory()
 
   const handleSubmit = () => {
-    console.log(category, difficulty, name)
+    updateGameContext({ category, difficulty, playerName, revenue: 0 });
+    history.replace('/questions');
   }
 
   return (
@@ -37,8 +38,8 @@ const Home = () => {
                   label="Name"
                   variant="outlined"
                   className="input"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  value={playerName}
+                  onChange={(e) => setPlayerName(e.target.value)}
                 />
               </FormControl>
             </Grid>

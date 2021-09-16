@@ -1,5 +1,18 @@
 export const difficultyList = ["Any Difficulty", "Easy", "Medium", "Hard"];
 
+export const revenueList = [
+    { id: 1, value: 1000},
+    { id: 2, value: 2000},
+    { id: 3, value: 3000},
+    { id: 4, value: 4000},
+    { id: 5, value: 5000},
+    { id: 6, value: 6000},
+    { id: 7, value: 7000},
+    { id: 8, value: 8000},
+    { id: 9, value: 9000},
+    { id: 10, value: 10000},
+]
+
 export const categoryList = [
   {
     "id": 9,
